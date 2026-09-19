@@ -1,75 +1,68 @@
-# React + TypeScript + Vite
+# FocusList
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, responsive task management application built with React, TypeScript, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+FocusList helps users organize everyday tasks, assign priorities, track progress, and quickly find tasks using search and filters. Tasks are stored locally in the browser, so they remain available after refreshing the page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+https://focuslist-opal.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- Create tasks with a title and priority
+- Set priorities:
+  - High
+  - Medium
+  - Low
+- Mark tasks as completed or active
+- Edit task titles and priorities
+- Delete tasks with confirmation
+- Search tasks by title
+- Filter by:
+  - All
+  - Active
+  - Completed
+  - Priority
+- Live task statistics:
+  - Total
+  - Completed
+  - Pending
+- Persistent storage using browser `localStorage`
+- Responsive desktop and mobile interface
+- Accessible buttons, labels, focus states, and status feedback
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- Lucide React
+- Playwright
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+```text
+focuslist/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── TaskFilters.tsx
+│   │   ├── TaskForm.tsx
+│   │   ├── TaskItem.tsx
+│   │   ├── TaskList.tsx
+│   │   └── TaskStats.tsx
+│   ├── hooks/
+│   │   └── useLocalStorage.ts
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── types.ts
+├── tests/
+│   └── focuslist.spec.ts
+├── playwright.config.ts
+├── package.json
+├── vite.config.ts
+└── README.md
